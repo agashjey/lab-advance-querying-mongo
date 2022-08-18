@@ -182,21 +182,3 @@ query:
         "acquisition.acquired_year":{$gte:2011}
     }]
 }
-
-OR
-
-query:
-{
-    $and:[{
-        founded_year:{$gte:2000}
-    }, {
-        founded_year:{$lte:2010}
-    }, {
-        "acquisition.acquired_year":{$gte:2011}
-    }, {
-        $nor:[{
-            "acquisition.acquired_year":{$lt:2011}
-        }
-    }]
-}
-
